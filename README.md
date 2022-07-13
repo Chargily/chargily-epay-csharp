@@ -48,6 +48,7 @@ Install-Package Chargily.EpayGateway.NET
 1. Get your API Key/Secret from [ePay by Chargily](https://epay.chargily.com.dz) dashboard for free
 
 # How to use
+### __Usage with any generic C# Project:__
 this package provide `ChargilyEpayClient` client, to create payment request use: 
 ```csharp
 using Chargily.EpayGateway.NET;
@@ -56,7 +57,7 @@ var client = ChagilyEpay.CreateClient("[API_KEY]");
 
 var payment = new EpayPaymentRequest()
 {
-    InvoiceNumber = "[SOME_INVOICE_NUMER]"
+    InvoiceNumber = "[INVOICE_NUMBER]",
     Name = "Ahmed",
     Email = "rainxh11@gmail.com",
     Amount = 1500,
@@ -67,11 +68,11 @@ var payment = new EpayPaymentRequest()
     ExtraInfo = "Product Purchase"
 };
 
-var response = await client.CreatePayment(EpayPaymentRequest);
+var response = await client.CreatePayment(payment);
 ```
 
 # Usage with ASP.NET Core
-## this apply to: 
+## this applies to: 
 - ASP.NET Core WebAPI
 - ASP.NET Core Minimal WebAPI 
 - Blazor Server 
