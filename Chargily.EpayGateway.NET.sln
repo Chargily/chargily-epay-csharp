@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chargily.EpayGateway.NET", "Chargily.EpayGateway.NET\Chargily.EpayGateway.NET.csproj", "{5830C4B1-9EC8-4393-9918-766A0CCA6F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chargily.EpayGateway.NET.AspNetCore.MinimalAPIExample", "Chargily.EpayGateway.NET.AspNetCore.MinimalAPIExample\Chargily.EpayGateway.NET.AspNetCore.MinimalAPIExample.csproj", "{18694913-5B67-4D33-B517-20D986D9743D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chargily.EpayGateway.NET.AspNetCore.MinimalAPIExample", "Chargily.EpayGateway.NET.AspNetCore.MinimalAPIExample\Chargily.EpayGateway.NET.AspNetCore.MinimalAPIExample.csproj", "{18694913-5B67-4D33-B517-20D986D9743D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{ADBEC92C-6129-4D74-82C1-A2839452C956}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{18694913-5B67-4D33-B517-20D986D9743D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18694913-5B67-4D33-B517-20D986D9743D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18694913-5B67-4D33-B517-20D986D9743D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADBEC92C-6129-4D74-82C1-A2839452C956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBEC92C-6129-4D74-82C1-A2839452C956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBEC92C-6129-4D74-82C1-A2839452C956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBEC92C-6129-4D74-82C1-A2839452C956}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
