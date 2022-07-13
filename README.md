@@ -1,6 +1,11 @@
-<img src="https://raw.githubusercontent.com/rainxh11/epay-gateway-dotnet/master/assets/chargily.svg" width="300">
+<img src="https://raw.githubusercontent.com/chargily/epay-gateway-csharp/master/assets/chargily.svg" width="300">
 
-[![Latest version](https://img.shields.io/nuget/v/Chargily.EpayGateway.NET.svg)](https://www.nuget.org/packages/Chargily.EpayGateway.NET/)
+<!-- | Nuget Pacakge | Downloads |
+|-|-|
+|[![Latest version](https://img.shields.io/nuget/v/Chargily.EpayGateway.NET.svg)](https://www.nuget.org/packages/Chargily.EpayGateway.NET/)|![Downloads](https://img.shields.io/nuget/dt/Chargily.EpayGateway.NET.svg)| -->
+
+###  __Nuget Package:__ [![Latest version](https://img.shields.io/nuget/v/Chargily.EpayGateway.NET.svg)](https://www.nuget.org/packages/Chargily.EpayGateway.NET/)
+
 
 # Chargily ePay Gateway C\#.NET Plugin
 ## This package supports the following frameowrks and platforms:
@@ -8,12 +13,15 @@
 |-|-|-|
 | Console | ✅|Windows, Linux, macOS|
 | ASP.NET Core |✅|Windows, Linux, macOS|
+| Blazor WASM |✅|Windows, Linux, macOS|
+| Blazor Server |✅|Windows, Linux, macOS|
 |.NET MAUI |✅|Windows, Linux, macOS, Android, iOS, Tizen|
 | Xamarin | ✅ | Android, iOS |
 | ASP.NET |✅|Windows|
 | WPF |✅|Windows|
+| AvaloniaUI | ✅| Windows, Linux, macOS |
 | UWP | ✅ | Windows, Xbox OS |
-| WinForm | ✅ | Windows |
+| WinForms | ✅ | Windows |
 
 Any C# application that uses `Microsoft.Extensions.DependencyInjection` can use this package
 #
@@ -25,8 +33,15 @@ Integrate ePayment gateway with Chargily easily.
 
 # Installation
 **First**, install the `Chargily.EpayGateway.NET` [NuGet package](https://www.nuget.org/packages/Chargily.EpayGateway.NET) into your app
+
+#### __Using DotNet CLI :__
 ```powershell
-PM> Install-Package Chargily.EpayGateway.NET
+dotnet add Chargily.EpayGateway.NET
+```
+
+#### __Using Visual Studio Dev Console:__
+```powershell
+Install-Package Chargily.EpayGateway.NET
 ```
 
 # Requirements
@@ -55,7 +70,13 @@ var payment = new EpayPaymentRequest()
 var response = await client.CreatePayment(EpayPaymentRequest);
 ```
 
-# Usage with ASP.NET Core Minimal API
+# Usage with ASP.NET Core
+## this apply to: 
+- ASP.NET Core WebAPI
+- ASP.NET Core Minimal WebAPI 
+- Blazor Server 
+- Blazor WASM 
+- ASP.NET Core MVC
 ```csharp
 using Chargily.EpayGateway.NET;
 using Microsoft.AspNetCore.Mvc;
