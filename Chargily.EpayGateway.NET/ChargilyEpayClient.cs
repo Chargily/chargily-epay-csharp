@@ -64,7 +64,7 @@ namespace Chargily.EpayGateway.NET
             }
             catch (Exception ex)
             {
-                _logger?.LogError($"[ChargilyEpay.NET] Exception Thrown: {ex.Message}");
+                _logger?.LogError($"[ChargilyEpay.NET] Exception Thrown: {0}", ex.Message);
                 throw new Exception($"Create Payment Request Failed!. {ex.Message}", ex);
             }
         }
