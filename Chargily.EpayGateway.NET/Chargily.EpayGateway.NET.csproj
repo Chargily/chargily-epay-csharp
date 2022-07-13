@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+	  <LangVersion>8.0</LangVersion>
+	  <PackageIcon>chargily.png</PackageIcon>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <OutputType>Library</OutputType>
+	  <Version>1.0.11</Version>
+	  <StartupObject />
+	  <Authors>Chakhoum Ahmed (github.com/rainxh11)</Authors>
+	  <Description>C# .NET Library to use Chargily Epay Payment Gateway</Description>
+	  <Copyright>© 2022 Chakhoum Ahmed</Copyright>
+	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <PackageProjectUrl>https://github.com/rainxh11/epay-gateway-dotnet</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/rainxh11/epay-gateway-dotnet</RepositoryUrl>
+	  <RepositoryType>github</RepositoryType>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <PackageTags>ccp;poste;algerieposte;chargily;epay;gateway;payment;edahabia;cib;ecommerce;satim</PackageTags>
+	  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+	<ItemGroup>
+	  <None Include="..\assets\chargily.png" Pack="true" PackagePath="\" />
+	  <None Include="..\readme.md" Pack="true" PackagePath="\" />
+	  <None Include="..\LICENSE" Pack="true" PackagePath="" />
+	  
+	  <PackageReference Include="FluentValidation" Version="11.1.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+    <PackageReference Include="Refit" Version="6.3.2" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
+    <PackageReference Include="System.Text.Json" Version="6.0.5" />
+  </ItemGroup>
+	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
+</Project>
