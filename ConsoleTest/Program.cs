@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using Chargily.EpayGateway.NET;
+using chargily.epay.csharp;
 
 Console.Write($"Provide Chargily API_KEY : ");
 var apiKey = Console.ReadLine();

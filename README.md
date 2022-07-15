@@ -1,13 +1,13 @@
 <img src="https://raw.githubusercontent.com/chargily/epay-gateway-csharp/master/assets/chargily.svg" width="300">
 
-<!-- | Nuget Pacakge | Downloads |
+| Nuget Pacakge | Downloads |
 |-|-|
-|[![Latest version](https://img.shields.io/nuget/v/Chargily.EpayGateway.NET.svg)](https://www.nuget.org/packages/Chargily.EpayGateway.NET/)|![Downloads](https://img.shields.io/nuget/dt/Chargily.EpayGateway.NET.svg)| -->
-
-###  __Nuget Package:__ [![Latest version](https://img.shields.io/nuget/v/Chargily.EpayGateway.NET.svg)](https://www.nuget.org/packages/Chargily.EpayGateway.NET/)
+|[![Latest version](https://img.shields.io/nuget/v/chargily.epay.csharp.svg)](https://www.nuget.org/packages/chargily.epay.csharp/)|![Downloads](https://img.shields.io/nuget/dt/chargily.epay.csharp.svg)|
 
 
-# Chargily ePay Gateway C\#.NET Plugin
+
+
+# Chargily ePay Gateway C\# Package
 ## This package supports the following frameowrks and platforms:
 | Framework | Support | Platform |
 |-|-|-|
@@ -32,16 +32,16 @@ Integrate ePayment gateway with Chargily easily.
 - This is a **C#.NET Nuget Package**, If you are using another programing language [Browse here](https://github.com/Chargily/) or look to [API documentation](https://github.com/Chargily/epay-gateway-php/blob/master/README.md)
 
 # Installation
-**First**, install the `Chargily.EpayGateway.NET` [NuGet package](https://www.nuget.org/packages/Chargily.EpayGateway.NET) into your app
+**First**, install the `chargily.epay.csharp` [NuGet package](https://www.nuget.org/packages/chargily.epay.csharp) into your app
 
 #### __Using DotNet CLI :__
 ```powershell
-dotnet add Chargily.EpayGateway.NET
+dotnet add chargily.epay.csharp
 ```
 
 #### __Using Visual Studio Dev Console:__
 ```powershell
-Install-Package Chargily.EpayGateway.NET
+Install-Package chargily.epay.csharp
 ```
 
 # Requirements
@@ -51,7 +51,7 @@ Install-Package Chargily.EpayGateway.NET
 ### __Usage with any generic C# Project:__
 this package provide `ChargilyEpayClient` client, to create payment request use: 
 ```csharp
-using Chargily.EpayGateway.NET;
+using chargily.epay.csharp;
 
 var client = ChagilyEpay.CreateClient("[API_KEY]");
 
@@ -79,7 +79,7 @@ var response = await client.CreatePayment(payment);
 - Blazor WASM 
 - ASP.NET Core MVC
 ```csharp
-using Chargily.EpayGateway.NET;
+using chargily.epay.csharp;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -128,7 +128,7 @@ app.Run();
 ```
 ### WebHook Validation:
 ```csharp
-using Chargily.EpayGateway.NET;
+using chargily.epay.csharp;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -182,7 +182,7 @@ builder.Services.AddChargilyEpayGateway();
 This package provide `WebHookValidatorMiddleware` ASP.NET Core Middleware, when registered every `POST` request that have a `Signature` Http Header will be validated automatically. 
 How to register the Middleware:
 ```csharp
-using Chargily.EpayGateway.NET;
+using chargily.epay.csharp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -205,6 +205,8 @@ using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using chargily.epay.csharp;
+
 namespace MyApp
 {
   public static class MauiProgram

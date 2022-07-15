@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 
-namespace Chargily.EpayGateway.NET
+namespace chargily.epay.csharp
 {
     /// <summary>
     /// Chargily Epay Services 

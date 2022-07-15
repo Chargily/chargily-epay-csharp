@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Net.Http.Headers;
 
-namespace Chargily.EpayGateway.NET
+namespace chargily.epay.csharp
 {
     public class WebHookValidatorMiddleware : IMiddleware
     {
