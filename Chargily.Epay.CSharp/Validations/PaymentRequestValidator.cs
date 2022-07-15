@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using FluentValidation;
 
-namespace Chargily.EpayGateway.NET.Validations
+namespace chargily.epay.csharp.Validations
 {
     public class PaymentRequestValidator : AbstractValidator<EpayPaymentRequest>
     {

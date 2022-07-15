@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Chargily.EpayGateway.NET.Validations;
+using chargily.epay.csharp.Validations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Refit;
 
-namespace Chargily.EpayGateway.NET
+namespace chargily.epay.csharp
 {
     public static class ChagilyEpay
     {

@@ -7,11 +7,11 @@
 	  <PackageReadmeFile>readme.md</PackageReadmeFile>
 	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	  <OutputType>Library</OutputType>
-	  <Version>1.0.13</Version>
+	  <Version>1.0.0</Version>
 	  <StartupObject />
-	  <Authors>Chakhoum Ahmed (github.com/rainxh11)</Authors>
-	  <Description>C# .NET Library to use Chargily Epay Payment Gateway</Description>
-	  <Copyright>© 2022 Chakhoum Ahmed</Copyright>
+	  <Authors>Chargily</Authors>
+	  <Description>C# .NET Library to use Chargily Epay</Description>
+	  <Copyright>© 2022 Chargily</Copyright>
 	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	  <PackageProjectUrl>https://github.com/Chargily/chargily-epay-csharp</PackageProjectUrl>
 	  <RepositoryUrl>https://github.com/Chargily/chargily-epay-csharp</RepositoryUrl>
@@ -19,6 +19,8 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <PackageTags>ccp;poste;algerieposte;chargily;epay;gateway;payment;edahabia;cib;ecommerce;satim</PackageTags>
 	  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+	  <Product>chargily.epay.csharp</Product>
+	  <PackageId>chargily.epay.csharp</PackageId>
   </PropertyGroup>
 	<ItemGroup>
 	  <None Include="..\assets\chargily.png" Pack="true" PackagePath="\" />

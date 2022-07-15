@@ -1,4 +1,4 @@
-using Chargily.EpayGateway.NET;
+using chargily.epay.csharp;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Chargily.Epay.CSharp\Chargily.Epay.CSharp.csproj" />
     <ProjectReference Include="..\Chargily.EpayGateway.NET\Chargily.EpayGateway.NET.csproj" />
   </ItemGroup>
 

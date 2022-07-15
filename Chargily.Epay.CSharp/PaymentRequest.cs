@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Chargily.EpayGateway.NET
+namespace chargily.epay.csharp
 {
     public class PaymentRequest
     {

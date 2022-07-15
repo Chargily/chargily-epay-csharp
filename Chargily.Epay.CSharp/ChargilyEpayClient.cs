@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
-namespace Chargily.EpayGateway.NET
+namespace chargily.epay.csharp
 {
     public class ChargilyEpayClient : IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>
     {
