@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Refit;
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
     public interface IChargilyEpayAPI
     {

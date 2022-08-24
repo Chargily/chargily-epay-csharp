@@ -48,12 +48,15 @@ Install-Package chargily.epay.csharp
 1. Get your API Key/Secret from [ePay by Chargily](https://epay.chargily.com.dz) dashboard for free
 
 # How to use
+### Installation & Project Creation Video Guide
+*Soon*
+
 ### __Usage with any generic C# Project:__
 this package provide `ChargilyEpayClient` client, to create payment request use: 
 ```csharp
-using chargily.epay.csharp;
+using Chargily.Epay;
 
-var client = ChagilyEpay.CreateClient("[API_KEY]");
+var client = ChargilyEpay.CreateClient("[API_KEY]");
 
 var payment = new EpayPaymentRequest()
 {
@@ -72,6 +75,14 @@ var response = await client.CreatePayment(payment);
 ```
 
 # Usage with ASP.NET Core
+
+###  Video Guide how to use with Minimal API
+*Soon*
+
+###  Video Guide how to use with ASP.NET Core WebAPI
+*Soon*
+
+
 ## this applies to: 
 - ASP.NET Core WebAPI
 - ASP.NET Core Minimal WebAPI 
@@ -79,7 +90,7 @@ var response = await client.CreatePayment(payment);
 - Blazor WASM 
 - ASP.NET Core MVC
 ```csharp
-using chargily.epay.csharp;
+using Chargily.Epay;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -128,7 +139,7 @@ app.Run();
 ```
 ### WebHook Validation:
 ```csharp
-using chargily.epay.csharp;
+using Chargily.Epay;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -182,7 +193,7 @@ builder.Services.AddChargilyEpayGateway();
 This package provide `WebHookValidatorMiddleware` ASP.NET Core Middleware, when registered every `POST` request that have a `Signature` Http Header will be validated automatically. 
 How to register the Middleware:
 ```csharp
-using chargily.epay.csharp;
+using Chargily.Epay;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -205,7 +216,7 @@ using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using chargily.epay.csharp;
+using Chargily.Epay;
 
 namespace MyApp
 {

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
     public interface IWebHookValidator
     {

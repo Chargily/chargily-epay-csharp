@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
     public class EpayPaymentRequest
     {

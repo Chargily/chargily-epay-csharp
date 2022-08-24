@@ -3,11 +3,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Refit;
 using FluentValidation;
 using System.Net.Http;
-using chargily.epay.csharp.Validations;
+using Chargily.Epay.Validations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
     public static partial class ChargilyEpayService
     {

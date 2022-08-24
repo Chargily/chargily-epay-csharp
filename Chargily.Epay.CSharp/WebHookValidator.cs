@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
     public class WebHookValidator : IWebHookValidator
     {

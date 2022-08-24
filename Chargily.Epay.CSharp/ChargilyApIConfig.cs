@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
     public class ChargilyApIConfig
     {
