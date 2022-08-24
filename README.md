@@ -86,7 +86,8 @@ var response = await client.CreatePayment(payment);
 # Usage with ASP.NET Core
 
 ###  Video Guide how to use with Minimal API
-*Soon*
+
+https://user-images.githubusercontent.com/35665161/186486826-22b04394-7210-466f-b5ed-58cddc930848.mp4
 
 ###  Video Guide how to use with ASP.NET Core WebAPI
 *Soon*
