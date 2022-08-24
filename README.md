@@ -45,16 +45,20 @@ Install-Package chargily.epay.csharp
 ```
 
 #### Using Visual Studio IDE:
-https://github.com/rainxh11/chargily-epay-csharp/raw/main/assets/tutorial_adding_nuget_package.mp4
+https://user-images.githubusercontent.com/35665161/186457000-dd4882d5-d683-4a58-a069-6f092f5a1498.mp4
+
+
 # Requirements
 1. Get your API Key/Secret from [ePay by Chargily](https://epay.chargily.com.dz) dashboard for free
 
 # How to use
 ### Installation & Project Creation Video Guide
-https://github.com/rainxh11/chargily-epay-csharp/raw/main/assets/tutorial_create_console_project.mp4
+https://user-images.githubusercontent.com/35665161/186457062-26920590-3e62-4154-805f-95e3688afd40.mp4
 
 #### Implemention of the code below:
-https://github.com/rainxh11/chargily-epay-csharp/raw/main/assets/tutorial_generic_project.mp4
+https://user-images.githubusercontent.com/35665161/186457825-74178dbb-7a13-47df-9caa-cf2a90b2f50a.mp4
+
+
 
 ### __Usage with any generic C# Project:__
 this package provide `ChargilyEpayClient` client, to create payment request use: 
