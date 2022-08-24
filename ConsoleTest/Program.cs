@@ -1,10 +1,10 @@
 ﻿using System.Text.Json;
-using chargily.epay.csharp;
+using Chargily.Epay;
 
 Console.Write($"Provide Chargily API_KEY : ");
 var apiKey = Console.ReadLine();
 
-var client = ChagilyEpay.CreateClient(apiKey);
+var client = ChargilyEpay.CreateClient(apiKey);
 
 var payment = new EpayPaymentRequest()
 {

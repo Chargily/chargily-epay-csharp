@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using chargily.epay.csharp.Validations;
+using Chargily.Epay.Validations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Refit;
 
-namespace chargily.epay.csharp
+namespace Chargily.Epay
 {
-    public static class ChagilyEpay
+    public static class ChargilyEpay
     {
         private static ChargilyEpayClient _client = null;
         private static IServiceProvider _provider;
