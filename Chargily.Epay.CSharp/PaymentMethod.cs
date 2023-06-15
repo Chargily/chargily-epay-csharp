@@ -1,4 +1,4 @@
-﻿namespace Chargily.Epay
+﻿namespace Chargily.Epay.CSharp
 {
     public enum PaymentMethod
     {

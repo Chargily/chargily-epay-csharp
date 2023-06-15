@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+	  <TargetFrameworks>net6.0</TargetFrameworks>
 	  <LangVersion>8.0</LangVersion>
 	  <PackageIcon>chargily.png</PackageIcon>
 	  <PackageReadmeFile>readme.md</PackageReadmeFile>
 	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	  <OutputType>Library</OutputType>
-	  <Version>1.1.0</Version>
+	  <Version>2.0.0</Version>
 	  <StartupObject />
 	  <Authors>Chargily</Authors>
 	  <Description>C# .NET Library to use Chargily Epay</Description>
-	  <Copyright>© 2022 Chargily</Copyright>
+	  <Copyright>© 2023 Chargily</Copyright>
 	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	  <PackageProjectUrl>https://github.com/Chargily/chargily-epay-csharp</PackageProjectUrl>
 	  <RepositoryUrl>https://github.com/Chargily/chargily-epay-csharp</RepositoryUrl>
@@ -27,15 +27,17 @@
 	  <None Include="..\readme.md" Pack="true" PackagePath="\" />
 	  <None Include="..\LICENSE" Pack="true" PackagePath="" />
 	  
-	  <PackageReference Include="FluentValidation" Version="11.1.0" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
-    <PackageReference Include="Refit" Version="6.3.2" />
+	  <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+	  <FrameworkReference  Include="Microsoft.AspNetCore.App" />
+
+		<PackageReference Include="Refit" Version="6.3.2" />
     <PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
-    <PackageReference Include="System.Text.Json" Version="6.0.5" />
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
   </ItemGroup>
 	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
 		<ItemGroup>

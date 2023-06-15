@@ -1,13 +1,17 @@
 ﻿using System;
-using Microsoft.Extensions.DependencyInjection;
-using Refit;
-using FluentValidation;
 using System.Net.Http;
-using Chargily.Epay.Validations;
+
+using Chargily.Epay.CSharp.Validations;
+
+using FluentValidation;
+
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Chargily.Epay
+using Refit;
+
+namespace Chargily.Epay.CSharp
 {
     public static partial class ChargilyEpayService
     {
@@ -19,18 +23,18 @@ namespace Chargily.Epay
         public static IServiceCollection AddChargilyEpayGateway(this IServiceCollection services)
         {
             return services
-                .AddLogging()
-                .AddHttpClient()
-                .AddRefitClient<IChargilyEpayAPI>()
-                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
-                .Services
-                .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
+                  .AddLogging()
+                  .AddHttpClient()
+                  .AddRefitClient<IChargilyEpayAPI>()
+                  .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
+                  .Services
+                  .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                  .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
                     provider =>
                     {
-                        var logger = provider.GetService<ILogger<ChargilyEpayClient>>();
-                        var validator = provider.GetService<IValidator<EpayPaymentRequest>>();
-                        var apiClient = provider.GetService<IChargilyEpayAPI>();
+                        var logger        = provider.GetService<ILogger<ChargilyEpayClient>>();
+                        var validator     = provider.GetService<IValidator<EpayPaymentRequest>>();
+                        var apiClient     = provider.GetService<IChargilyEpayAPI>();
                         var configuration = provider.GetService<IConfiguration>();
 
                         return new ChargilyEpayClient(configuration, logger, validator, apiClient);
@@ -44,21 +48,21 @@ namespace Chargily.Epay
         /// <param name="configureHttpClient">Configure HttpClient instance and BaseAddress</param>
         /// <returns></returns>
         public static IServiceCollection AddChargilyEpayGateway(this IServiceCollection services,
-            Action<HttpClient> configureHttpClient)
+                                                                Action<HttpClient> configureHttpClient)
         {
             return services
-                .AddLogging()
-                .AddHttpClient()
-                .AddRefitClient<IChargilyEpayAPI>()
-                .ConfigureHttpClient(configureHttpClient)
-                .Services
-                .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
+                  .AddLogging()
+                  .AddHttpClient()
+                  .AddRefitClient<IChargilyEpayAPI>()
+                  .ConfigureHttpClient(configureHttpClient)
+                  .Services
+                  .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                  .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
                     provider =>
                     {
-                        var logger = provider.GetService<ILogger<ChargilyEpayClient>>();
-                        var validator = provider.GetService<IValidator<EpayPaymentRequest>>();
-                        var apiClient = provider.GetService<IChargilyEpayAPI>();
+                        var logger        = provider.GetService<ILogger<ChargilyEpayClient>>();
+                        var validator     = provider.GetService<IValidator<EpayPaymentRequest>>();
+                        var apiClient     = provider.GetService<IChargilyEpayAPI>();
                         var configuration = provider.GetService<IConfiguration>();
 
                         return new ChargilyEpayClient(configuration, logger, validator, apiClient);
@@ -74,16 +78,16 @@ namespace Chargily.Epay
         public static IServiceCollection AddChargilyEpayGateway(this IServiceCollection services, string apiKey)
         {
             return services
-                .AddLogging()
-                .AddHttpClient()
-                .AddRefitClient<IChargilyEpayAPI>()
-                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
-                .Services
-                .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
+                  .AddLogging()
+                  .AddHttpClient()
+                  .AddRefitClient<IChargilyEpayAPI>()
+                  .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
+                  .Services
+                  .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                  .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
                     provider =>
                     {
-                        var logger = provider.GetService<ILogger<ChargilyEpayClient>>();
+                        var logger    = provider.GetService<ILogger<ChargilyEpayClient>>();
                         var validator = provider.GetService<IValidator<EpayPaymentRequest>>();
                         var apiClient = provider.GetService<IChargilyEpayAPI>();
 
@@ -99,19 +103,19 @@ namespace Chargily.Epay
         /// <param name="configureHttpClient">Configure HttpClient instance and BaseAddress</param>
         /// <returns></returns>
         public static IServiceCollection AddChargilyEpayGateway(this IServiceCollection services, string apiKey,
-            Action<HttpClient> configureHttpClient)
+                                                                Action<HttpClient> configureHttpClient)
         {
             return services
-                .AddLogging()
-                .AddHttpClient()
-                .AddRefitClient<IChargilyEpayAPI>()
-                .ConfigureHttpClient(configureHttpClient)
-                .Services
-                .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
+                  .AddLogging()
+                  .AddHttpClient()
+                  .AddRefitClient<IChargilyEpayAPI>()
+                  .ConfigureHttpClient(configureHttpClient)
+                  .Services
+                  .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                  .AddSingleton<IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>, ChargilyEpayClient>(
                     provider =>
                     {
-                        var logger = provider.GetService<ILogger<ChargilyEpayClient>>();
+                        var logger    = provider.GetService<ILogger<ChargilyEpayClient>>();
                         var validator = provider.GetService<IValidator<EpayPaymentRequest>>();
                         var apiClient = provider.GetService<IChargilyEpayAPI>();
 
@@ -131,13 +135,13 @@ namespace Chargily.Epay
             IChargilyEpayClient<TResponse, TRequest> client)
         {
             return services
-                .AddLogging()
-                .AddHttpClient()
-                .AddRefitClient<IChargilyEpayAPI>()
-                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
-                .Services
-                .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                .AddSingleton(client);
+                  .AddLogging()
+                  .AddHttpClient()
+                  .AddRefitClient<IChargilyEpayAPI>()
+                  .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
+                  .Services
+                  .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                  .AddSingleton(client);
         }
 
         /// <summary>
@@ -153,13 +157,13 @@ namespace Chargily.Epay
             IChargilyEpayClient<TResponse, TRequest> client, Action<HttpClient> configureHttpClient)
         {
             return services
-                .AddLogging()
-                .AddHttpClient()
-                .AddRefitClient<IChargilyEpayAPI>()
-                .ConfigureHttpClient(configureHttpClient)
-                .Services
-                .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                .AddSingleton(client);
+                  .AddLogging()
+                  .AddHttpClient()
+                  .AddRefitClient<IChargilyEpayAPI>()
+                  .ConfigureHttpClient(configureHttpClient)
+                  .Services
+                  .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                  .AddSingleton(client);
         }
     }
 }

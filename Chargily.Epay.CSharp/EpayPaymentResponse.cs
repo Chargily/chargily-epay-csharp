@@ -1,14 +1,12 @@
-﻿using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Json;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Chargily.Epay
+using FluentValidation.Results;
+
+namespace Chargily.Epay.CSharp
 {
     public class EpayPaymentResponse
     {
@@ -21,19 +19,19 @@ namespace Chargily.Epay
 
         public async Task CreatePaymentResponse(HttpResponseMessage httpResponse)
         {
-            this.HttpStatusCode = httpResponse.StatusCode;
+            HttpStatusCode = httpResponse.StatusCode;
             if (httpResponse.IsSuccessStatusCode)
             {
-                this.IsSuccessful = true;
-                this.Body = JsonSerializer.Deserialize<JsonDocument>(await httpResponse.Content.ReadAsStringAsync());
-                this.ResponseMessage = JsonSerializer.SerializeToDocument(new { Message = "Success" });
+                IsSuccessful = true;
+                Body = JsonSerializer.Deserialize<JsonDocument>(await httpResponse.Content.ReadAsStringAsync());
+                ResponseMessage = JsonSerializer.SerializeToDocument(new { Message = "Success" });
             }
             else
             {
-                this.IsSuccessful = false;
-                this.ResponseMessage =
+                IsSuccessful = false;
+                ResponseMessage =
                     JsonSerializer.Deserialize<JsonDocument>(await httpResponse.Content.ReadAsStringAsync());
-                this.Body = null;
+                Body = null;
             }
         }
 
@@ -41,12 +39,12 @@ namespace Chargily.Epay
         {
             if (!validationResult.IsValid)
             {
-                this.IsRequestValid = false;
-                this.ResponseMessage = JsonSerializer.SerializeToDocument(validationResult.Errors);
+                IsRequestValid  = false;
+                ResponseMessage = JsonSerializer.SerializeToDocument(validationResult.Errors);
             }
             else
             {
-                this.IsRequestValid = true;
+                IsRequestValid = true;
             }
         }
     }

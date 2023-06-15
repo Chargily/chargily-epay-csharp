@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Chargily.Epay
+namespace Chargily.Epay.CSharp
 {
     public class PaymentRequest
     {
@@ -22,10 +22,6 @@ namespace Chargily.Epay
 
         public string ExtraInfo { get; set; }
 
-        [JsonIgnore]
-        public double AmountAfterDiscount
-        {
-            get => Amount - (Amount * DiscountPercentage / 100);
-        }
+        [JsonIgnore] public double AmountAfterDiscount => Amount - Amount * DiscountPercentage / 100;
     }
 }

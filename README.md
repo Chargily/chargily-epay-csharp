@@ -157,13 +157,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddChargilyWebHookValidator("[APP_SECRET]");
 
 var app = builder.Build();
-app.MapPost("/webhook-validator", ([FromServices] IWebHookValidator validator, HttpRequest request) =>
-{
-    var signature = request.Headers["Signature"].First();
-    var validation = validator.Validate(signature, request.Body);
-
-    return validation;
-});
+app.MapPost("/webhook_endpoint",
+            ([FromServices] IWebHookValidator validator, HttpRequest request, [FromBody] ChargilyWebhookRequest body) =>
+            {
+                var signature = request.Headers["Signature"].First();
+                var isValid   = validator.Validate(signature, request.Body);
+                if (isValid) return Results.Ok(body.Invoice);
+                return Results.Unauthorized();
+            });
 
 app.Run();
 ```

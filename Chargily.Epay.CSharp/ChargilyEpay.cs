@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Chargily.Epay.Validations;
+
+using Chargily.Epay.CSharp.Validations;
+
 using FluentValidation;
+
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+
 using Refit;
 
-namespace Chargily.Epay
+namespace Chargily.Epay.CSharp
 {
     public static class ChargilyEpay
     {
@@ -18,20 +20,18 @@ namespace Chargily.Epay
         public static ChargilyEpayClient CreateClient(string apiKey)
         {
             if (_provider == null)
-            {
                 _provider = new ServiceCollection()
-                    .AddLogging()
-                    .AddHttpClient()
-                    .AddRefitClient<IChargilyEpayAPI>()
-                    .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
-                    .Services
-                    .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
-                    .BuildServiceProvider();
-            }
+                           .AddLogging()
+                           .AddHttpClient()
+                           .AddRefitClient<IChargilyEpayAPI>()
+                           .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://epay.chargily.com.dz"))
+                           .Services
+                           .AddSingleton<IValidator<EpayPaymentRequest>, PaymentRequestValidator>()
+                           .BuildServiceProvider();
 
             if (_client == null)
             {
-                var logger = _provider.GetService<ILogger<ChargilyEpayClient>>();
+                var logger    = _provider.GetService<ILogger<ChargilyEpayClient>>();
                 var validator = _provider.GetService<IValidator<EpayPaymentRequest>>();
                 var apiClient = _provider.GetService<IChargilyEpayAPI>();
 

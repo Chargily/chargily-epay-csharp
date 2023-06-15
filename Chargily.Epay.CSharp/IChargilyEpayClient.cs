@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Chargily.Epay
+namespace Chargily.Epay.CSharp
 {
     public interface IChargilyEpayClient<TResponse, TRequest>
     {

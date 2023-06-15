@@ -1,13 +1,13 @@
-﻿using FluentValidation;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 
-namespace Chargily.Epay
+using FluentValidation;
+
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+
+namespace Chargily.Epay.CSharp
 {
     public class ChargilyEpayClient : IChargilyEpayClient<EpayPaymentResponse, EpayPaymentRequest>
     {
@@ -18,25 +18,25 @@ namespace Chargily.Epay
         private readonly ILogger<ChargilyEpayClient>? _logger;
 #nullable disable
         public ChargilyEpayClient(string apiKey,
-            ILogger<ChargilyEpayClient> logger,
-            IValidator<EpayPaymentRequest> validator,
-            IChargilyEpayAPI apiClient)
+                                  ILogger<ChargilyEpayClient> logger,
+                                  IValidator<EpayPaymentRequest> validator,
+                                  IChargilyEpayAPI apiClient)
         {
-            _apiKey = apiKey;
-            _logger = logger;
+            _apiKey    = apiKey;
+            _logger    = logger;
             _validator = validator;
             _apiClient = apiClient;
         }
 
         public ChargilyEpayClient(IConfiguration configuration,
-            ILogger<ChargilyEpayClient> logger,
-            IValidator<EpayPaymentRequest> validator,
-            IChargilyEpayAPI apiClient)
+                                  ILogger<ChargilyEpayClient> logger,
+                                  IValidator<EpayPaymentRequest> validator,
+                                  IChargilyEpayAPI apiClient)
         {
-            _logger = logger;
+            _logger    = logger;
             _validator = validator;
             _apiClient = apiClient;
-            _apiKey = configuration["CHARGILY_API_KEY"];
+            _apiKey    = configuration["CHARGILY_API_KEY"];
         }
 
         public async Task<EpayPaymentResponse> CreatePayment(EpayPaymentRequest request)
@@ -46,7 +46,7 @@ namespace Chargily.Epay
                 _logger?.LogInformation($"[ChargilyEpay.NET] New Payment Request:" +
                                         $"{Environment.NewLine}{JsonSerializer.Serialize(request)}");
 
-                var response = new EpayPaymentResponse();
+                var response   = new EpayPaymentResponse();
                 var validation = await _validator.ValidateAsync(request);
                 response.ValidatePaymentRequest(validation);
                 if (!validation.IsValid)

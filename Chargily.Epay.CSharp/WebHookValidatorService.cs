@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 
-namespace Chargily.Epay
+namespace Chargily.Epay.CSharp
 {
     /// <summary>
     /// Chargily Epay Services 
@@ -20,7 +20,7 @@ namespace Chargily.Epay
         public static IServiceCollection AddChargilyWebHookValidator(this IServiceCollection services, string appSecret)
         {
             return services
-                .AddSingleton<IWebHookValidator, WebHookValidator>(provider =>
+               .AddSingleton<IWebHookValidator, WebHookValidator>(provider =>
                 {
                     var logger = provider.GetService<ILogger<WebHookValidator>>();
 
@@ -36,9 +36,9 @@ namespace Chargily.Epay
         public static IServiceCollection AddChargilyWebHookValidator(this IServiceCollection services)
         {
             return services
-                .AddSingleton<IWebHookValidator, WebHookValidator>(provider =>
+               .AddSingleton<IWebHookValidator, WebHookValidator>(provider =>
                 {
-                    var logger = provider.GetService<ILogger<WebHookValidator>>();
+                    var logger        = provider.GetService<ILogger<WebHookValidator>>();
                     var configuration = provider.GetService<IConfiguration>();
                     return new WebHookValidator(configuration, logger);
                 });
@@ -51,7 +51,7 @@ namespace Chargily.Epay
         /// <param name="appSecret">Chargily APP SECRET, get it from Chargily Dashboard https://epay.chargily.com.dz/secure/admin/epay-api</param>
         /// <returns></returns>
         public static IServiceCollection AddChargilyValidatorMiddleware(this IServiceCollection services,
-            string appSecret)
+                                                                        string appSecret)
         {
             services.TryAdd(ServiceDescriptor.Singleton<IWebHookValidator, WebHookValidator>(provider =>
             {
@@ -61,7 +61,7 @@ namespace Chargily.Epay
             }));
 
             return services
-                .AddScoped<WebHookValidatorMiddleware>();
+               .AddScoped<WebHookValidatorMiddleware>();
         }
 
 
@@ -76,13 +76,13 @@ namespace Chargily.Epay
         {
             services.TryAdd(ServiceDescriptor.Singleton<IWebHookValidator, WebHookValidator>(provider =>
             {
-                var logger = provider.GetService<ILogger<WebHookValidator>>();
+                var logger        = provider.GetService<ILogger<WebHookValidator>>();
                 var configuration = provider.GetService<IConfiguration>();
                 return new WebHookValidator(configuration, logger);
             }));
 
             return services
-                .AddScoped<WebHookValidatorMiddleware>();
+               .AddScoped<WebHookValidatorMiddleware>();
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Chargily.Epay
         public static IApplicationBuilder UseChargilyValidatorMiddleware(this IApplicationBuilder appBuilder)
         {
             return appBuilder
-                .UseMiddleware<WebHookValidatorMiddleware>();
+               .UseMiddleware<WebHookValidatorMiddleware>();
         }
     }
 }

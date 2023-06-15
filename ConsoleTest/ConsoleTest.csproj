@@ -8,12 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="6.0.5" />
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Chargily.Epay.CSharp\Chargily.Epay.CSharp.csproj" />
-    <ProjectReference Include="..\Chargily.EpayGateway.NET\Chargily.EpayGateway.NET.csproj" />
   </ItemGroup>
 
 </Project>
