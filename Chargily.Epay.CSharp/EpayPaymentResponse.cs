@@ -10,12 +10,12 @@ namespace Chargily.Epay.CSharp
 {
     public class EpayPaymentResponse
     {
-        public HttpStatusCode HttpStatusCode { get; set; }
-        public JsonDocument ResponseMessage { get; set; }
-        public bool IsSuccessful { get; set; } = false;
-        public bool IsRequestValid { get; set; } = false;
-        public JsonDocument Body { get; set; }
-        public DateTime CreatedOn { get; set; } = DateTime.Now;
+        public HttpStatusCode HttpStatusCode { get; internal set; }
+        public JsonDocument ResponseMessage { get; internal set; }
+        public bool IsSuccessful { get; internal set; } = false;
+        public bool IsRequestValid { get; internal set; } = false;
+        public JsonDocument Body { get; internal set; }
+        public DateTime CreatedOn { get; internal set; } = DateTime.Now;
 
         public async Task CreatePaymentResponse(HttpResponseMessage httpResponse)
         {
